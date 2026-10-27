@@ -18,10 +18,10 @@ Para cada `if` de `Conta.java`, diga qual teste faz o `if` ser **verdadeiro** e 
 
 | `if` (condição) | Teste que torna **verdadeiro** | Teste que torna **falso** |
 |---|---|---|
-| saldo inicial negativo (construtor) | | |
-| valor do depósito `<= 0` | | |
-| valor do saque `<= 0` | | |
-| saque maior que o saldo | | |
+| saldo inicial negativo (construtor) | `construtorComSaldoNegativoDeveZerarSaldo` | `contaNovaDeveGuardarTitularESaldoInicial` |
+| valor do depósito `<= 0` | `depositoComValorNegativoDeveSerRecusado` | `depositoValidoDeveAumentarOSaldo` |
+| valor do saque `<= 0` | `saqueZeradoDeveSerRecusado` | `saqueValidoDeveDiminuirOSaldo` |
+| saque maior que o saldo | `saqueMaiorQueOSaldoDeveSerRecusado` | `saqueValidoDeveDiminuirOSaldo` |
 
 ## 3. Nível 2: regras de `ServicoTransferencia`
 
