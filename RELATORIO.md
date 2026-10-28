@@ -1,6 +1,6 @@
 # Relatório do Laboratório: JUnit 5
 
-**Dupla:** _Nome 1_ e _Nome 2_
+**Dupla:** Éder Junior 
 **Link do fork:** _https://github.com/..._
 
 ## 1. Resultado final
@@ -27,22 +27,22 @@ Para cada `if` de `Conta.java`, diga qual teste faz o `if` ser **verdadeiro** e 
 
 | Regra | Teste(s) que a exercita(m) |
 |---|---|
-| R1 mesma conta | |
-| R2 valor <= 0 | |
-| R3 acima do limite de 5.000 (e 5.000 exatos permitido) | |
-| R4 saldo insuficiente para valor + tarifa (nada é alterado); tarifa de 1% acima de 1.000 (1.000 exatos sem tarifa) | |
-| R5 transferência OK: saldos da origem e do destino | |
+| R1 mesma conta | `mesmaContaEValorInvalidoDevemSerRecusados` |
+| R2 valor <= 0 | `mesmaContaEValorInvalidoDevemSerRecusados` |
+| R3 acima do limite de 5.000 (e 5.000 exatos permitido) | `transferenciaAcimaDoLimiteDeveSerRecusada`   `transferenciaIgualAoLimiteDeveSerAceita` |
+| R4 saldo insuficiente para valor + tarifa (nada é alterado); tarifa de 1% acima de 1.000 (1.000 exatos sem tarifa) | `saldoInsuficienteParaValorMaisTarifaNaoAlteraNenhumaConta`   `transferenciaIgualAoLimiteDeveSerAceita` |
+| R5 transferência OK: saldos da origem e do destino | `transferenciaIgualAoLimiteDeveSerAceita `  `transferenciaDeExatamente1000NaoPagaTarifa`  `transferenciaAcimaDe1000PagaTarifaDe1Porcento `  `transferenciaPequenaDeveSerAceitaSemTarifa` |
 
 ## 4. Nível 3: regras de `AnalisadorEmprestimo`
 
 | Regra | Cenário escolhido (entradas → decisão esperada) | Método de teste |
 |---|---|---|
-| 1. entradas inválidas → DADOS_INVALIDOS (cada uma das 6 condições) | | |
-| 2. score < 300 → NEGADO | | |
-| 3. taxa por faixa de score (800 / 600) | | |
-| 4. parcela (Price) | | |
-| 5. comprometimento > 50% → NEGADO; > 30% → ANÁLISE MANUAL | | |
-| 6. comprometimento <= 30%: score >= 600 aprovado; abaixo, análise manual | | |
+| 1. entradas inválidas → DADOS_INVALIDOS (cada uma das 6 condições) | teste com score negativo, com score acima de 1000, renda zerada, valor negativo → DADOS_INVALIDOS | `entradasInvalidasDevemRetornarDadosInvalidos` |
+| 2. score < 300 → NEGADO | score de 299 → retorna NEGADO | `scoreAbaixoDe300DeveSerNegado` |
+| 3. taxa por faixa de score (800 / 600) | taxas de 12% (score 800), 24% (score 600) e 36%(score 599) | `taxaJurosAplicaCorretamentePorFaixaDeScore` |
+| 4. parcela (Price) | 10 mil reais em 12x eom 1% ao mes → parcela de 888,48 reais | `calculoDaParcelaPriceDeveEstarCorreto` |
+| 5. comprometimento > 50% → NEGADO; > 30% → ANÁLISE MANUAL | parcela pagando mais de 50% da renda → NEGADO, parcelam entre 30 e 50 por cento → ANALISE MANUAL | `comprometimentoAcimaDosLimitesDeveSerNegadoOuAnaliseManual` |
+| 6. comprometimento <= 30%: score >= 600 aprovado; abaixo, análise manual | parcela menor ou igual a 30% da renda com score de 600 → APROVADO, score 599 → ANALISE MANUAL | `comprometimentoAte30PorCentoAprovaOuPedeAnaliseManual` |
 
 ## 5. Reflexão (2 a 4 linhas cada)
 
