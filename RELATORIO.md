@@ -1,14 +1,26 @@
 # Relatório do Laboratório: JUnit 5
 
 **Dupla:** Éder Junior 
-**Link do fork:** _https://github.com/..._
+**Link do fork:** _https://github.com/ederjunior-06/lab-junit-jacoco-eder.git_
 
 ## 1. Resultado final
 
 Cole aqui o resumo que aparece no final de `java scripts/Rodar.java`:
 
 ```
-(cole aqui)
+Test run finished after 476 ms
+[         6 containers found      ]
+[         0 containers skipped    ]
+[         6 containers started    ]
+[         0 containers aborted    ]
+[         6 containers successful ]
+[         0 containers failed     ]
+[        21 tests found           ]
+[         0 tests skipped         ]
+[        21 tests started         ]
+[         0 tests aborted         ]
+[        21 tests successful      ]
+[         0 tests failed          ]
 ```
 
 ## 2. Nível 1: `if`s de `Conta`
