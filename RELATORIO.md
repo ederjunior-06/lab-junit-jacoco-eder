@@ -47,11 +47,11 @@ Para cada `if` de `Conta.java`, diga qual teste faz o `if` ser **verdadeiro** e 
 ## 5. Reflexão (2 a 4 linhas cada)
 
 1. **Os dois lados do `if`:** qual `if` ficou sem teste de um dos lados no começo? Que bug passaria
-   despercebido por isso?
+   despercebido por isso? acredito que seria o saque se colacasse um valor menor que 0 pois passaria, pois nao existe teste para esse caso.
 2. **Valor-limite:** qual teste de fronteira (ex.: 1.000,00 / 5.000,00 / score 600) vocês acham
-   mais importante? Que bug ele pegaria se o código usasse `>=` no lugar de `>`?
+   mais importante? Que bug ele pegaria se o código usasse `>=` no lugar de `>`? o de transferencia de 1.000 reais porque se mudasse >= no lugar de > ele nao ia passar no teste pois teria que pagar taxa com valores a 1000
 3. **Nível 3:** como vocês decidiram quais cenários testar? (classes de equivalência, fronteiras,
-   leitura das regras...)
+   leitura das regras...) eu li as regras na ordem e quis aplicar um teste para cada, tentando testar as pontas como valores invalidos, limites de score e variando as porcentagens de renda
 4. **Teste que passa mas não protege:** descrevam um teste que executa o código e passa, mas não
-   verificaria um erro (dica: um teste sem `assert`).
-5. **Divisão do trabalho:** quem escreveu o quê? (uma linha)
+   verificaria um erro (dica: um teste sem `assert`). um teste onde executa uma transferência, porém no final não utiliza dos assertsEquals, assim passando no teste mas não podendo checar se a trasnferencia podia ser realizada de acordo com as regras.
+5. **Divisão do trabalho:** quem escreveu o quê? (uma linha): Fiz tudo sozinho pois não pude ir à aula
